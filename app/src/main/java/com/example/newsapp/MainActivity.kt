@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         adapter = NewsAdapter(this@MainActivity, articles)
         newsList.adapter = adapter
-       // newsList.layoutManager = LinearLayoutManager(this@MainActivity)
+        newsList.layoutManager = LinearLayoutManager(this@MainActivity)
 
-        val layoutManager = StackLayoutManager(StackLayoutManager.ScrollOrientation.BOTTOM_TO_TOP)
+        /*val layoutManager = StackLayoutManager(StackLayoutManager.ScrollOrientation.BOTTOM_TO_TOP)
         layoutManager.setPagerMode(true)
         layoutManager.setPagerFlingVelocity(2500)
         newsList.layoutManager = layoutManager
@@ -41,8 +41,9 @@ class MainActivity : AppCompatActivity() {
                     getNews()
                 }
             }
-        })
-
+        })*/
+        getNews()
+        pageNumber++
         getNews()
     }
 

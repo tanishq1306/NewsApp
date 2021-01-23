@@ -1,6 +1,7 @@
 package com.example.newsapp
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,9 @@ class NewsAdapter (val context: Context, val articles: List<Article>) : Recycler
         Glide.with(context).load(article.urlToImage).into(holder.newsImage)
         holder.itemView.setOnClickListener() {
             Toast.makeText(context, article.title, Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, webViewActivity::class.java)
+            intent.putExtra("URL", article.url)
+            context.startActivity(intent)
         }
     }
 
